@@ -1,0 +1,11 @@
+api_usabilidade/db.sqlite3
+api_usabilidade/.env
+api_usabilidade/api_usabilidade/__pycache__/*
+api_usabilidade/apps/products/__pycache__/*
+api_usabilidade/apps/products/migrations/*
+api_usabilidade/apps/users/__pycache__/*
+api_usabilidade/apps/users/migrations/*
+api_usabilidade/apps/customers/__pycache__/*
+api_usabilidade/apps/customers/migrations/*
+api_usabilidade/apps/stores/__pycache__/*
+api_usabilidade/apps/stores/migrations/*
