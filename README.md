@@ -1,5 +1,3 @@
-# api_usabilidade_a3
-
 <h1 align="center">📝Projeto A3📝</h1>
 
 <h2 align="center">Usabilidade, Desenvolvimento Web, Mobile e Jogos</h2>
