@@ -14,16 +14,12 @@ class CustomerViewset(APIView):
             item = models. Customer.objects.get(id=id)
             serializer = serializers.CustomerSerializer (item)
 
-            return Response({
-                "status": "success",
-                "data": serializer.data}, status=status.HTTP_200_OK)
+            return Response({serializer.data}, status=status.HTTP_200_OK)
         
         items = models.Customer.objects.all()
         serializer = serializers.CustomerSerializer(items, many=True)
 
-        return Response({
-            "status:":"success",
-            "data":serializer.data}, status=status.HTTP_200_OK)
+        return Response({serializer.data}, status=status.HTTP_200_OK)
     
     def post(self, request):
         serializer = serializers.CustomerSerializer(data=request.data)
@@ -31,13 +27,9 @@ class CustomerViewset(APIView):
         if serializer.is_valid():
             serializer.save()
 
-            return Response({
-                "status":"success",
-                "data":serializer.data}, status=status.HTTP_200_OK)
+            return Response({serializer.data}, status=status.HTTP_200_OK)
         else:
-            return Response({
-                "status":"error",
-                "data":serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
     
     def put(self, request, id=None):
         item = models.Customer.objects.get(id=id)
@@ -46,20 +38,13 @@ class CustomerViewset(APIView):
         if serializer.is_valid():
             serializer.save()
 
-            return Response({
-                "status":"success",
-                "data":serializer.data}, status=status.HTTP_200_OK)
+            return Response({serializer.data}, status=status.HTTP_200_OK)
         else:
-            return Response({
-                "status":"error",
-                "data":serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
         
     def delete(self, request, id=None):
         item = models.Customer.objects.filter(id=id)
         item.delete()
 
-        return Response({
-            "status":"success",
-            "data":"Item Deleted"
-        })
+        return Response(status=status.HTTP_204_NO_CONTENT)
  
