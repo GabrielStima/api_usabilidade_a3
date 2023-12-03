@@ -2,11 +2,11 @@ from django.db import models
 
 # Create your models here.
 class Customer(models.Model):
-    first_name = models.CharField(max_length=20, blank=False)
-    last_name = models.CharField(max_length=50, blank=False)
+    firstname = models.CharField(max_length=20, blank=False)
+    lastname = models.CharField(max_length=50, blank=False)
     email = models.EmailField(blank=False)
-    cell_phone = models.BigIntegerField(blank=False)
-    birth_date = models.DateField(blank=False)
+    phone = models.BigIntegerField(blank=False)
+    birthdate = models.DateField(blank=False)
     
     class Meta:
         verbose_name = 'Cliente'
