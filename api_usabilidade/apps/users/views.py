@@ -11,15 +11,15 @@ from rest_framework import status
 class UserViewset(APIView):
     def get(self, request, id=None):
         if id:
-            item = models. User.objects.get(id=id)
+            item = models.User.objects.get(id=id)
             serializer = serializers.UserSerializer (item)
 
-            return Response({serializer.data}, status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         
         items = models.User.objects.all()
         serializer = serializers.UserSerializer(items, many=True)
 
-        return Response({serializer.data}, status=status.HTTP_200_OK)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
     def post(self, request):
         serializer = serializers.UserSerializer(data=request.data)
@@ -27,9 +27,9 @@ class UserViewset(APIView):
         if serializer.is_valid():
             serializer.save()
 
-            return Response({serializer.data}, status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         else:
-            return Response({serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     def put(self, request, id=None):
         item = models.User.objects.get(id=id)
@@ -38,9 +38,9 @@ class UserViewset(APIView):
         if serializer.is_valid():
             serializer.save()
 
-            return Response({serializer.data}, status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         else:
-            return Response({serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
     def delete(self, request, id=None):
         item = models.User.objects.filter(id=id)
