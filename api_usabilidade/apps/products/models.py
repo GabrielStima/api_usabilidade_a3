@@ -9,7 +9,7 @@ class Product(models.Model):
     brand = models.CharField(max_length=30, blank=False)
     price = models.IntegerField(blank=False)
     stock = models.IntegerField(blank=False)
-    store_id = models.ForeignKey(Store, on_delete=models.CASCADE)     # Quando o store for deletado, PRODUCT também será
+    store = models.ForeignKey(Store, on_delete=models.CASCADE)     # Quando o store for deletado, PRODUCT também será
 
     class Meta:
         verbose_name = 'Produto'

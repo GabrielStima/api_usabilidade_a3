@@ -13,15 +13,15 @@ class ProductViewset(APIView):
     
     def get(self, request, id=None):
         if id:
-            item = models. Product.objects.get(id=id)
+            item = models.Product.objects.get(id=id)
             serializer = serializers.ProductSerializer (item)
 
-            return Response({serializer.data}, status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         
         items = models.Product.objects.all()
         serializer = serializers.ProductSerializer(items, many=True)
 
-        return Response({serializer.data}, status=status.HTTP_200_OK)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
     def post(self, request):
         serializer = serializers.ProductSerializer(data=request.data)
@@ -29,9 +29,9 @@ class ProductViewset(APIView):
         if serializer.is_valid():
             serializer.save()
 
-            return Response({serializer.data}, status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         else:
-            return Response({serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     def put(self, request, id=None):
         item = models.Product.objects.get(id=id)
@@ -40,9 +40,9 @@ class ProductViewset(APIView):
         if serializer.is_valid():
             serializer.save()
 
-            return Response({serializer.data}, status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         else:
-            return Response({serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
     def delete(self, request, id=None):
         item = models.Product.objects.filter(id=id)
