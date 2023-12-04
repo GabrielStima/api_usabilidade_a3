@@ -15,12 +15,12 @@ class StoreViewset(APIView):
             item = models.Store.objects.get(id=id)
             serializer = serializers.StoreSerializer(item)
 
-            return Response({serializer.data}, status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         
         items = models.Store.objects.all()
         serializer = serializers.StoreSerializer(items, many=True)
 
-        return Response({serializer.data}, status=status.HTTP_200_OK)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
     def post(self, request):
         serializer = serializers.StoreSerializer(data=request.data)
@@ -28,9 +28,9 @@ class StoreViewset(APIView):
         if serializer.is_valid():
             serializer.save()
 
-            return Response({serializer.data}, status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         else:
-            return Response({serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     def put(self, request, id=None):
         item = models.Store.objects.get(id=id)
@@ -39,9 +39,9 @@ class StoreViewset(APIView):
         if serializer.is_valid():
             serializer.save()
 
-            return Response({serializer.data}, status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         else:
-            return Response({serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
     def delete(self, request, id=None):
         item = models.Store.objects.filter(id=id)

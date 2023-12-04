@@ -8,7 +8,7 @@ class Store(models.Model):
     name = models.CharField(max_length=20, blank=False)
     cnpj = models.IntegerField(unique=True, blank=False)
     address = models.CharField(max_length=50, blank=False)
-    customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)     # Quando o customer for deletado, STORE também será
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)     # Quando o customer for deletado, STORE também será
 
 
     class Meta:
