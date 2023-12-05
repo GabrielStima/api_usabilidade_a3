@@ -6,7 +6,7 @@ import uuid
 class Store(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     name = models.CharField(max_length=20, blank=False)
-    cnpj = models.IntegerField(unique=True, blank=False)
+    cnpj = models.CharField(max_length=18, blank=False)
     address = models.CharField(max_length=50, blank=False)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)     # Quando o customer for deletado, STORE também será
 
