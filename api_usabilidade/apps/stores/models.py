@@ -1,5 +1,4 @@
 from django.db import models
-from customers.models import Customer
 import uuid
 
 # Create your models here.
@@ -8,7 +7,6 @@ class Store(models.Model):
     name = models.CharField(max_length=40, blank=False)
     cnpj = models.CharField(max_length=18, blank=False)
     address = models.CharField(max_length=60, blank=False)
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)     # Quando o customer for deletado, STORE também será
 
 
     class Meta:
