@@ -1,15 +1,14 @@
 from django.db import models
-from stores.models import Store
+import uuid
 
 # Create your models here.
 class Product(models.Model):
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     title = models.CharField(max_length=40, blank=False)
-    description = models.TextField(max_length=150, blank=False)
     category = models.CharField(max_length=30, blank=False)
     brand = models.CharField(max_length=30, blank=False)
     price = models.IntegerField(blank=False)
     stock = models.IntegerField(blank=False)
-    store = models.ForeignKey(Store, on_delete=models.CASCADE)     # Quando o store for deletado, PRODUCT também será
 
     class Meta:
         verbose_name = 'Produto'
