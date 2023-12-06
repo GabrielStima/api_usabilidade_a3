@@ -3,9 +3,9 @@ from stores.models import Store
 
 # Create your models here.
 class Product(models.Model):
-    title = models.CharField(max_length=30, blank=False)
-    description = models.TextField(max_length=100, blank=False)
-    category = models.CharField(max_length=15, blank=False)
+    title = models.CharField(max_length=40, blank=False)
+    description = models.TextField(max_length=150, blank=False)
+    category = models.CharField(max_length=30, blank=False)
     brand = models.CharField(max_length=30, blank=False)
     price = models.IntegerField(blank=False)
     stock = models.IntegerField(blank=False)
