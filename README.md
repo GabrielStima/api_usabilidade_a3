@@ -16,8 +16,7 @@
 
 <h4 align="center">Requisitos presentes no software:</h4>
 
-<p align="left">O projeto é sobre uma aplicação de gerenciamento de estoque. <br><br>- Cadastro e edição de usuários, podendo ter categorias diferentes.<br>- Catalogação e edição de produtos<br>- Registro de quem é o''proprietário'' da loja como um cadastro adicional onde ele é vinculado a uma ou mais lojas.</p>
-
+<p align="left">O projeto é sobre uma aplicação de gerenciamento de estoque. <br><br>- Cadastro e edição de usuários, podendo ter categorias diferentes.<br>- Catalogação e edição de produtos<br>- Registro de dono de filiais<br>- Registro de filiais.</p>
 <h2 align="left"></h2>
 
 <h3 align="left">📚Dependências Utilizadas:</h3>
