@@ -40,4 +40,11 @@
 
 <h3 align="left">👨‍💻Como rodar</h3>
 
-<p align="left">1- Primeiro inicie seu ambiente virtualizado com ''conda activate (ambiente)''<br>2 - Depois rode o script abaixo para inserir as informações no banco de dados.<br>(SCRIPT VAI ESTAR AQUI)<br>3- Após isso abra o terminal e digite "py manage.py createsuperuser"<br>4- Então migre as mudanças para o banco com "py manage.py makemigrations" e "py manage.py migrate".<br>5- Por fim digite "py manage.py runserver" para rodar.</p>
+<p align="left">
+1- Primeiro inicie seu ambiente virtualizado com ''conda activate (ambiente)''.<br>
+2- Após isso de um "py manage.py migrate".<br>
+3- Agora abra o terminal e digite "py manage.py createsuperuser".<br>
+4- Então migre as mudanças para o banco com "py manage.py makemigrations (appName)".<br>
+5- Depois rode o script abaixo para inserir as informações no banco de dados.<br>
+(SCRIPT VAI ESTAR AQUI)<br>
+6- Por fim digite "py manage.py runserver" para rodar.</p><br>
