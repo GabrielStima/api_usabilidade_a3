@@ -22,7 +22,7 @@ class UserViewset(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
     
     def post(self, request):
-        serializer = serializers.UserSerializer(data=request.data)
+        serializer = serializers.UserSerializer(data=request.data)  
 
         if serializer.is_valid():
             serializer.save()
