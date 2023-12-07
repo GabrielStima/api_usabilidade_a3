@@ -9,5 +9,5 @@ router = routers.DefaultRouter()
 
 urlpatterns = [
     path('stores/', StoreViewset.as_view()),
-    path('stores/store/<uuid:pk>', StoreViewset_UUID.as_view())
+    path('stores/store/<uuid:id>', StoreViewset_UUID.as_view())
 ]
