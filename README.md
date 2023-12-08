@@ -1,6 +1,6 @@
 <h1 align="center">📝Projeto A3📝</h1>
 
-<h2 align="center">Usabilidade, Desenvolvimento Web, Mobile e Jogos</h2>
+<h2 align="center">Gerenciador de estoque</h2>
 
 <h3 align="left">🙋‍♂️Integrantes do grupo:</h3>
 
