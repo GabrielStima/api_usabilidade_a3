@@ -11,9 +11,12 @@ from rest_framework import status
 class UserViewset(APIView):
     def get(self, request, id=None):
         if id:
-            item = models.User.objects.get(id=id)
+            try:
+                item = models.User.objects.get(id=id)
+            except:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            
             serializer = serializers.UserSerializer (item)
-
             return Response(serializer.data, status=status.HTTP_200_OK)
         
         items = models.User.objects.all()
