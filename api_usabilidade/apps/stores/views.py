@@ -17,7 +17,7 @@ class StoreViewset(APIView):
             except:
                 return Response(status=status.HTTP_404_NOT_FOUND)
             
-            serializer = serializers.UserSerializer (item)
+            serializer = serializers.StoreSerializer(item)
             return Response(serializer.data, status=status.HTTP_200_OK)
         
         items = models.Store.objects.all()

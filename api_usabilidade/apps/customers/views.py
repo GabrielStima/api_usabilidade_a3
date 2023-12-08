@@ -16,7 +16,7 @@ class CustomerViewset(APIView):
             except:
                 return Response(status=status.HTTP_404_NOT_FOUND)
             
-            serializer = serializers.UserSerializer (item)
+            serializer = serializers.CustomerSerializer(item)
             return Response(serializer.data, status=status.HTTP_200_OK)
         
         items = models.Customer.objects.all()

@@ -16,7 +16,7 @@ class UserViewset(APIView):
             except:
                 return Response(status=status.HTTP_404_NOT_FOUND)
             
-            serializer = serializers.UserSerializer (item)
+            serializer = serializers.UserSerializer(item)
             return Response(serializer.data, status=status.HTTP_200_OK)
         
         items = models.User.objects.all()
