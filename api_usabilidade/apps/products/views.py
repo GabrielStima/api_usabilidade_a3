@@ -13,9 +13,12 @@ class ProductViewset(APIView):
     
     def get(self, request, id=None):
         if id:
-            item = models.Product.objects.get(id=id)
-            serializer = serializers.ProductSerializer (item)
-
+            try:
+                item = models.Product.objects.get(id=id)
+            except:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            
+            serializer = serializers.UserSerializer (item)
             return Response(serializer.data, status=status.HTTP_200_OK)
         
         items = models.Product.objects.all()
