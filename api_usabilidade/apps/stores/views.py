@@ -12,9 +12,12 @@ class StoreViewset(APIView):
 
     def get(self, request, id=None):
         if id:
-            item = models.Store.objects.get(id=id)
-            serializer = serializers.StoreSerializer(item)
-
+            try:
+                item = models.Store.objects.get(id=id)
+            except:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            
+            serializer = serializers.UserSerializer (item)
             return Response(serializer.data, status=status.HTTP_200_OK)
         
         items = models.Store.objects.all()
@@ -48,7 +51,3 @@ class StoreViewset(APIView):
         item.delete()
 
         return Response(status=status.HTTP_204_NO_CONTENT)
-    
-class StoreViewset_UUID(generics.RetrieveUpdateDestroyAPIView):
-    queryset = models.Store.objects.all()
-    serializer_class = serializers.StoreSerializer
